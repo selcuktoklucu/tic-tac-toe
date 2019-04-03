@@ -12,6 +12,72 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Hello Tic Tac Toe!</h1>
+      <p>Who's turn:</p><p id="whosTurn">X</p>
+
+      <div class="main-board">
+        <div class="main-child-board">
+          <div class="row row1">
+            <div class="col-4 col-md-4 box alt-color" id="box0">row1 box1</div>
+            <div class="col-4 col-md-4 box alt-color" id="box1">row1 box2</div>
+            <div class="col-4 col-md-4 box alt-color" id="box2">row1 box3</div>
+          </div>
+          <div class="row row2">
+            <div class="col-4 col-md-4 box alt-color" id="box3">row2 box1</div>
+            <div class="col-4 col-md-4 box alt-color" id="box4">row2 box2</div>
+            <div class="col-4 col-md-4 box alt-color" id="box5">row2 box3</div>
+          </div>
+          <div class="row row3">
+            <div class="col-4 col-md-4 box alt-color" id="box6">row3 box1</div>
+            <div class="col-4 col-md-4 box alt-color" id="box7">row3 box2</div>
+            <div class="col-4 col-md-4 box alt-color" id="box8">row3 box3</div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Login here!
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <!-- exit button -->
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <!-- Login Section -->
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="form-password">
+                  <label for="exampleFormControlInput1">Password</label>
+                  <input type="password" class="form-control" id="examplePassword" placeholder="type your password">
+                </div>
+                <div class="form-password">
+                  <label for="exampleFormControlInput1">Password</label>
+                  <input type="password" class="form-control" id="examplePassword" placeholder="confirm password">
+                </div>
+                <button type="submit" class="btn btn-secondary" id="btn-signUp">Sign up</button>
+                <br>
+              </form>
+            </div>
+            <!-- Buttons -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" >Have an account?</button>
+              <button type="button" class="btn btn-primary" >Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </body>
 </html>
