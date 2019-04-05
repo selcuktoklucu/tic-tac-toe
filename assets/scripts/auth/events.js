@@ -2,13 +2,43 @@
 
 const api = require('./api.js')
 const gEn = require('../gameEngine.js')
+const getFormFields = require('./../../../lib/get-form-fields.js')
+const ui = require('./ui.js')
 
 let currentTurn = 'X'
 
 const onSignUp = function (event) {
   event.preventDefault()
+  const data = getFormFields(event.target)
   console.log('Hey I am on register function!')
-  api.signUp()
+  api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signInFailure)
+}
+
+const onSignIn = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('Hey I am on SignIN function!')
+  api.signIn(data)
+    .then(ui.signInSuccess)
+    .catch(ui.signInFailure)
+}
+
+const onChangePassword = function () {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.changePassword(data)
+    .then(ui.changePwSuccess)
+    .catch(ui.changePwFailure)
+}
+
+const onSignOut = function () {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const changeTurn = function () {
@@ -55,7 +85,10 @@ const onClickBox = function (event) {
 const addHandlers = function () {
   console.log('I am at events.js!, jquery passed me from app js')
   $('.box').on('click', onClickBox)
-  $('#btn-signUp').on('click', onSignUp)
+  $('#formSignUp').on('submit', onSignUp)
+  $('#formSignIn').on('submit', onSignIn)
+  $('#form-change-password').on('submit', onChangePassword)
+  $('#formSignOut').on('submit', onSignOut)
 }
 module.exports = {
   addHandlers
