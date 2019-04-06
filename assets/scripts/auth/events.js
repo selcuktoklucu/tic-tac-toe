@@ -57,7 +57,7 @@ const onClickBox = function (event) {
     // Check if game is over or not
     console.log('Game Over')
   } else {
-    console.log('click! event.target rendered!' + event.target.id)
+    console.log('click! event.target rendered! ' + event.target.id)
     // alert('ALEEERRT ' + event.target.id)
     console.log('text value is: ', $(event.target).text())
     if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {

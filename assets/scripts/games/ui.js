@@ -11,9 +11,9 @@ const getGamesSuccess = function (data) {
   data.games.forEach(function (game) {
     console.log(game.id)
     $('#games-display').append(`
-      <h3>${game.id}</h3>
-      <p>${game.cells}</p>
-      <p>${game.over}</p>
+      <p>Game ID: ${game.id}</p>
+      <p>Game Array: ${game.cells}</p>
+      <p>Is Game Over: ${game.over}</p>
       <br>
       `
     )

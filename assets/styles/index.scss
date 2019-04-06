@@ -6,7 +6,9 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
-  margin-left: 150px;
+  margin-left: 50px;
+  // display: flex;
+  // justify-content: center;
 }
 
 .box {
@@ -26,4 +28,12 @@ body {
 
 .alt-color {
   background-color: $alt-color;
+}
+
+.play-message-board {
+  display: inline-block;
+}
+
+.make-it-middle {
+  margin: auto;
 }

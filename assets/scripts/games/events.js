@@ -22,6 +22,7 @@ const handleCreateUpdate = function () {
 
 const createAGameForAUser = function (event) {
   cleanTheBoard()
+  $('#playAgain').hide()
   if (store.user.token === '' || store.user.token === undefined) {
     console.log('There is no user Logged In! To Create a game, please sign In!')
   // } else if (store.gBoardArr !== ['', '', '', '', '', '', '', '', '']) {
@@ -72,7 +73,7 @@ const updateApiArray = function (arrNumber, value, isGameEnd) {
   //   createAGameForAUser()
   // } else {
   console.log('current game id is: ' + currentGameID)
-  if (store.user.token === '' || store.user.token === undefined) {
+  if (store.user === '' || store.user === undefined) {
     console.log('There is no user Logged In! To save record, please sign In!')
   // } else if ($('#whosTurn').text() === 'Game Over') {
   //   // Check if game is over or not
@@ -86,10 +87,10 @@ const updateApiArray = function (arrNumber, value, isGameEnd) {
       .catch()
   } else {
     updateApiArrayExtension(arrNumber, value, isGameEnd)
+    $(document).delay(1000).queue(function () {
+      updateApiArrayExtension(arrNumber, value, isGameEnd)
+    })
   }
-  $(document).delay(1000).queue(function () {
-    updateApiArrayExtension(arrNumber, value, isGameEnd)
-  })
   // $('').delay(1000).updateApiArrayExtension(arrNumber, value)
   // I need to wait for creating the game on API
   // console.log('I am updating the API game' +
