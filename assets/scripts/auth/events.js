@@ -4,8 +4,8 @@ const api = require('./api.js')
 const gEn = require('../gameEngine.js')
 const getFormFields = require('./../../../lib/get-form-fields.js')
 const ui = require('./ui.js')
-
-let currentTurn = 'X'
+const store = require('../store.js')
+// let currentTurn = 'X'
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -13,7 +13,7 @@ const onSignUp = function (event) {
   console.log('Hey I am on register function!')
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.signInFailure)
+    .catch(ui.signUpFailure)
 }
 
 const onSignIn = function (event) {
@@ -42,11 +42,12 @@ const onSignOut = function () {
 }
 
 const changeTurn = function () {
-  if (currentTurn === 'X') {
-    currentTurn = 'O'
+  if (store.currentTurn === 'X') {
+    store.currentTurn = 'O'
   } else {
-    currentTurn = 'X'
+    store.currentTurn = 'X'
   }
+  $('#whosTurn').text(store.currentTurn)
 }
 
 const onClickBox = function (event) {
@@ -67,14 +68,14 @@ const onClickBox = function (event) {
       // debugger
     } else {
       // Get value of the box, so we can check if it is valid
-      $(event.target).html(currentTurn)
+      $(event.target).html(store.currentTurn)
       // debugger
       // .then(api.setCurrentGame)
       // After rendering the turn Call API
       // console.log()
       const boxId = event.target.id
       console.log('boxId charater of 3 is : ' + boxId.charAt(3))
-      gEn.updateGameBoardArray(currentTurn, boxId.charAt(3))
+      gEn.updateGameBoardArray(store.currentTurn, boxId.charAt(3))
       // .then(changeTurn())
       changeTurn()
       //                    ^^   this should be changed by the turn

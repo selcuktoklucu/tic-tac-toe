@@ -50,11 +50,24 @@ const checkIfThereIsAWinner = function () {
     console.log('YOU WON!')
     return true
     // gameState = false
+  } else if (store.gBoardArr.every(isEmpty)) {
+    console.log('Draw!')
+    gamesEvents.showPlayButton()
+    // alert('DRAW')
+    return false
   } else {
     console.log('Keep going')
     return false
   }
   //
+}
+
+const isEmpty = function (element) {
+  if (element === '') {
+    return false
+  } else {
+    return true
+  }
 }
 
 const endTheGame = function () {

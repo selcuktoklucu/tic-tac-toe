@@ -1,7 +1,7 @@
 
 const store = require('../store')
 const api = require('./api')
-const gEn = require('../gameEngine.js')
+// const gEn = require('../gameEngine.js')
 const ui = require('./ui')
 
 // updateApiArray(arrNumber, value, over, token)
@@ -37,8 +37,9 @@ const createAGameForAUser = function (event) {
 const cleanTheBoard = function () {
   store.gBoardArr = ['', '', '', '', '', '', '', '', '']
   console.log('store.gBoardArr cleaned! Array is: ' + store.gBoardArr)
+  store.currentTurn = 'X'
   $('#whosTurn').text('X')
-  $('.box').text('rdyToPlay')
+  $('.box').text('')
 }
 //
 // const updateFullArray = function () {
@@ -46,11 +47,24 @@ const cleanTheBoard = function () {
 //   store.gBoardArr =
 // }
 
+const showPlayButton = function () {
+  $('#playAgain').show(1000).on('click', createAGameForAUser)
+}
+
 const updateApiArray = function (arrNumber, value, isGameEnd) {
   if (isGameEnd === true) {
     // What happens if a game ends?
     $('#whosTurn').text('Game Over')
-    $('#playAgain').show(1000).on('click', createAGameForAUser)
+    // $('#onPlayMessage').text(store.currentTurn + 'Won the Game!')
+    $('#onPlayMessage').text(store.currentTurn + ' Won the Game!').css('background-color', 'green').animate({
+      opacity: 0.5
+    }, 1000, function () {
+      // Animation complete.
+      $('#onPlayMessage').animate({opacity: 1}).css('background-color', '')
+    })
+
+    // $('#playAgain').show(1000).on('click', createAGameForAUser)
+    showPlayButton()
   }
   // yendiysek isgamend true gelecek
   // if (currentGameID === null) {
@@ -108,13 +122,22 @@ const endTheGameOnEvents = function () {
   console.log('I Shouldnt CALLED!!')
 }
 
+const onShowGameHistory = function () {
+  event.preventDefault()
+  api.indexAllGames(store.user.token)
+    .then(ui.getGamesSuccess)
+    .catch()
+}
+
 const addHandlers = function () {
   // $('.box').on('click', updateApiArray)
   $('.box').on('click', handleCreateUpdate)
+  $('#formGameHistory').on('submit', onShowGameHistory)
 }
 module.exports = {
   addHandlers,
   updateApiArray,
   createAGameForAUser,
-  endTheGameOnEvents
+  endTheGameOnEvents,
+  showPlayButton
 }

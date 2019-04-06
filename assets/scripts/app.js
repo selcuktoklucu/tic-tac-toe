@@ -14,5 +14,11 @@ $(() => {
   userEvents.addHandlers()
   gamesEvents.addHandlers()
   $('#playAgain').hide()
+  $('#formSignUp').hide()
+  $('#form-change-password').hide()
+  $('#btn-Signout').hide()
+  $('#btn-ShowGameRecords').hide()
+  // $('#btnShowSignUpSection').on('click', alert(''))
+  // $('#btn-Signout').slideToggle(500)
   // ^^ All clicks will be here to handle front ent
 })

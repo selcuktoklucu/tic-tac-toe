@@ -9,7 +9,6 @@ curl "https://tic-tac-toe-wdi-production.herokuapp.com/sign-up" \
       "password_confirmation": "'"${PASSWORD}"'"
     }
   }'
-
 echo
 
 # EMAIL="st@st.com" PASSWORD="stst" sh auth/sign-up.sh

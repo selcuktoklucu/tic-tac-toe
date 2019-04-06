@@ -50,13 +50,28 @@ const updateLoggedInGame = function (arrNumber, value, gameStatus, token) {
   })
 }
 
+const indexAllGames = function (token) {
+  return $.ajax({
+    url: config.apiUrl + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + token
+      // ,
+      // 'index': arrNumber,
+      // 'value': value,
+      // 'over': gameStatus
+    }
+  })
+}
+
 // const finishLoggedInGame = function (gameEndingStatus, token) {
 //
 // }
 
 module.exports = {
   updateLoggedInGame,
-  createGame
+  createGame,
+  indexAllGames
 
 }
 // //

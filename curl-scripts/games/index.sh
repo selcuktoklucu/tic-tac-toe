@@ -1,4 +1,4 @@
-curl --include --request GET https://tic-tac-toe-wdi-production.herokuapp.com/games/ \
+curl --include --request GET https://tic-tac-toe-wdi.herokuapp.com/games/ \
     --header "Content-Type: application/json" \
     --header "Authorization: Token token=${TOKEN}" \
 # 4 was at the end??
