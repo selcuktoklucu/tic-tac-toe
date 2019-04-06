@@ -77,13 +77,15 @@ const endTheGame = function () {
 const updateGameBoardArray = function (value, arrNumber) {
   console.log('You have reached the gameEngine.js file! You value is : ' + value + ' arrNumber: ' + arrNumber)
   store.gBoardArr[arrNumber] = value
+  console.log('array Updated: ' + store.gBoardArr)
   // ^^ Local Array Updated
   if (store.game === undefined) {
     console.log('there is NO game')
   }
-  // is there a game???
-  console.log('array Updated: ' + store.gBoardArr)
+
   gamesEvents.updateApiArray(arrNumber, value, checkIfThereIsAWinner())
+
+  // is there a game???
   // TOKEN="" INDEX="" ID="" VALUE="" OVER="" sh games/update.sh
   // checkIfThereIsAWinner()
 }
