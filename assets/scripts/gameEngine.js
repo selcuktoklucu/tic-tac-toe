@@ -52,6 +52,9 @@ const checkIfThereIsAWinner = function () {
     // gameState = false
   } else if (store.gBoardArr.every(isEmpty)) {
     console.log('Draw!')
+    $('.play-message-board').text('Draw!')
+    $('#whosTurn').text('Draw :( ')
+
     gamesEvents.showPlayButton()
     // alert('DRAW')
     return false

@@ -47,7 +47,9 @@ const changeTurn = function () {
   } else {
     store.currentTurn = 'X'
   }
-  $('#whosTurn').text(store.currentTurn)
+  if ($('#whosTurn').text() !== 'Game Over') {
+    $('#whosTurn').text(store.currentTurn)
+  }
 }
 
 const onClickBox = function (event) {

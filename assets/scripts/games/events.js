@@ -56,15 +56,17 @@ const showPlayButton = function () {
 
 const updateApiArray = function (arrNumber, value, isGameEnd) {
   if (isGameEnd === true) {
-    // What happens if a game ends?
     $('#whosTurn').text('Game Over')
+
+    // What happens if a game ends?
     // $('#onPlayMessage').text(store.currentTurn + 'Won the Game!')
-    $('#onPlayMessage').text(store.currentTurn + ' Won the Game!').css('background-color', 'green').animate({
+    $('.play-message-board').text(store.currentTurn + ' Won the Game!').css('background-color', 'green').animate({
       opacity: 0.5
     }, 1000, function () {
       // Animation complete.
-      $('#onPlayMessage').animate({opacity: 1}).css('background-color', '')
+      $('.play-message-board').animate({opacity: 1}).css('background-color', '')
     })
+    // $('.play-message-board')
 
     // $('#playAgain').show(1000).on('click', createAGameForAUser)
     showPlayButton()
@@ -107,13 +109,13 @@ const updateApiArray = function (arrNumber, value, isGameEnd) {
 }
 
 const updateApiArrayExtension = function (arrNumber, value, isGameEnd) {
+  //
   $(() => {
     console.log('I am updating the API game' +
   'arrNumber= ' + arrNumber +
   'value= ' + value +
   'gamestatus= ' + isGameEnd +
   'store.user.token= ' + store.user.token)
-    // debugger
     api.updateLoggedInGame(arrNumber, value, isGameEnd, store.user.token)
       .then(console.log)
       .catch()
