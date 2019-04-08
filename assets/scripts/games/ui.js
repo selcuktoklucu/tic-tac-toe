@@ -8,7 +8,7 @@ const onCreateGameSuccess = function (data) {
 }
 const getGamesSuccess = function (data) {
   console.log('retrived games' + data.games)
-
+  $('#games-display').append('TotalGames: ' + data.games.length)
   // data.games.forEach(game.cells)
   data.games.forEach(function (game) {
     console.log(game.id)

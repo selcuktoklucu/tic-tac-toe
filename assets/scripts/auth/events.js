@@ -84,6 +84,23 @@ const onClickBox = function (event) {
     }
   }
 }
+let a = 1
+
+const toggleSignUpIn = () => {
+  if (a % 2 === 1) {
+    console.log('show sign up, hide sign in')
+    $('#formSignUp').show()
+    $('#formSignIn').hide()
+    $('#modelTitle').text('Sign Up!')
+    $('#btnShowSignUpIn').text('You already have Account?')
+  } else {
+    $('#formSignUp').hide()
+    $('#formSignIn').show()
+    $('#modelTitle').text('Sign In!')
+    $('#btnShowSignUpIn').text('Looking to Sign up?')
+  }
+  a++
+}
 
 const addHandlers = function () {
   console.log('I am at events.js!, jquery passed me from app js')
@@ -92,6 +109,7 @@ const addHandlers = function () {
   $('#formSignIn').on('submit', onSignIn)
   $('#form-change-password').on('submit', onChangePassword)
   $('#formSignOut').on('submit', onSignOut)
+  $('#btnShowSignUpIn').on('click', toggleSignUpIn)
 }
 module.exports = {
   addHandlers

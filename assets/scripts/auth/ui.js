@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const gameEvents = require('../games/events.js')
 
 const signUpSuccess = function (data) {
   console.log('signup Success', data)
@@ -30,17 +31,19 @@ const signInSuccess = function (data) {
   console.log('after stored user data into store.user', data)
   $('#form-change-password').slideToggle(500)
   $('#formSignIn').slideToggle(500)
-  $('#btnShowSignUpSection').hide(500)
+  // $('#btnShowSignUpSection').hide(500)
   // $('#btnShowSignUpSection').slideToggle(500)
   $('#btn-Signout').slideToggle(500)
   $('#btn-ShowGameRecords').toggle(500)
-
+  $('#btnShowSignUpIn').hide(500)
+  $('#myAccount').text('My Tic-Tac-Toe')
   $('#modelTitle').text('Successfuly Logged In!').css('background-color', 'green').animate({
     opacity: 0.25
   }, 700, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Change Password')
   })
+  gameEvents.createAGameForAUser()
   // $('form').trigger('reset')
   // clears all forms
   // debugger
@@ -88,7 +91,11 @@ const signOutSuccess = function () {
   $('#form-change-password').hide(600)
   $('#formSignIn').show(600)
   $('#btn-Signout').hide(600)
-  $('#btnShowSignUpSection').show(600)
+  // $('#btnShowSignUpSection').show(600)
+  $('#btnShowSignUpIn').show(500)
+  $('#btn-ShowGameRecords').hide(500)
+  $('#games-display').empty()
+  $('#myAccount').text('Sign In Here!')
 }
 
 const signOutFailure = function () {
