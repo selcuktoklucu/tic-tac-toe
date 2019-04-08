@@ -21,6 +21,12 @@ body {
   justify-content: center;
 }
 
+.btn-primary {
+  display: flex
+  margin 100;
+  max-width: 40vh;
+}
+
 .row {
   max-width: 300px;
 }
