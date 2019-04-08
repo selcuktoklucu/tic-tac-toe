@@ -15,4 +15,8 @@ System provides these features:
 -Update Game immediately
 -Creating game sessions related to user
 
+Strategies: Game has several rules and algorithms. General rules applied to the game logic. For creating user, and using API, provided documents used.
+
+Unsolved Problems: Visual design is improvable. Also multiplayer section can be attachable to play only one user.
+
 Tech Keywords: Single-Page-Application(SPA), HTML5, Javascript, Bootstrap 3, CSS3, API, JSON, JQuery, Git/Github, Authentication

@@ -8,6 +8,8 @@ const onCreateGameSuccess = function (data) {
 }
 const getGamesSuccess = function (data) {
   console.log('retrived games' + data.games)
+
+  // data.games.forEach(game.cells)
   data.games.forEach(function (game) {
     console.log(game.id)
     $('#games-display').append(`
