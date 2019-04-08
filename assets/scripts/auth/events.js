@@ -89,13 +89,13 @@ let a = 1
 const toggleSignUpIn = () => {
   if (a % 2 === 1) {
     console.log('show sign up, hide sign in')
-    $('#formSignUp').show()
-    $('#formSignIn').hide()
+    $('#formSignUp').show(500)
+    $('#formSignIn').hide(500)
     $('#modelTitle').text('Sign Up!')
     $('#btnShowSignUpIn').text('You already have Account?')
   } else {
-    $('#formSignUp').hide()
-    $('#formSignIn').show()
+    $('#formSignUp').hide(500)
+    $('#formSignIn').show(500)
     $('#modelTitle').text('Sign In!')
     $('#btnShowSignUpIn').text('Looking to Sign up?')
   }
