@@ -8,6 +8,9 @@ Link to wireframes and user stories. -->
 GitHub: https://github.com/selcuktoklucu/tic-tac-toe
 Live URL: https://selcuktoklucu.github.io/tic-tac-toe/
 
+![Wireframe1](./picturew1.jpg)
+![Wireframe2](./picturew2.jpg)
+
 This is a simply designed tic-tac-toe game, uses powerful user tracking system with connecting to an API server.
 System provides these features:
 -User security
