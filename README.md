@@ -8,9 +8,6 @@ Link to wireframes and user stories. -->
 GitHub: https://github.com/selcuktoklucu/tic-tac-toe
 Live URL: https://selcuktoklucu.github.io/tic-tac-toe/
 
-![Wireframe1](./picturew1.jpg)
-![Wireframe2](./picturew2.jpg)
-
 This is a simply designed tic-tac-toe game, uses powerful user tracking system with connecting to an API server.
 System provides these features:
 -User security
@@ -23,3 +20,7 @@ Strategies: Game has several rules and algorithms. General rules applied to the 
 Unsolved Problems: Visual design is improvable. Also multiplayer section can be attachable to play only one user.
 
 Tech Keywords: Single-Page-Application(SPA), HTML5, Javascript, Bootstrap 3, CSS3, API, JSON, JQuery, Git/Github, Authentication
+
+Wireframes
+![Wireframe1](./picturew1.jpg)
+![Wireframe2](./picturew2.jpg)
