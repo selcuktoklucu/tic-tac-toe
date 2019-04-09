@@ -10,7 +10,7 @@ const store = require('../store.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Hey I am on register function!')
+  // console.log('Hey I am on register function!')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -19,16 +19,16 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('Hey I am on SignIN function!')
+  // console.log('Hey I am on SignIN function!')
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
 
-const onChangePassword = function () {
+const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
+  // console.log(data)
   api.changePassword(data)
     .then(ui.changePwSuccess)
     .catch(ui.changePwFailure)
@@ -57,16 +57,16 @@ const onClickBox = function (event) {
   event.preventDefault()
   if ($('#whosTurn').text() === 'Game Over') {
     // Check if game is over or not
-    console.log('Game Over')
+    // console.log('Game Over')
   } else {
-    console.log('click! event.target rendered! ' + event.target.id)
+    // console.log('click! event.target rendered! ' + event.target.id)
     // alert('ALEEERRT ' + event.target.id)
-    console.log('text value is: ', $(event.target).text())
+    // console.log('text value is: ', $(event.target).text())
     if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {
-      console.log('You tried invalid slot! Please use a valid spot to play!')
+      // console.log('You tried invalid slot! Please use a valid spot to play!')
       //
     } else if (gEn.gameState === false) {
-      console.log('game is over Mesage from onClickBox')
+      // console.log('game is over Mesage from onClickBox')
       // debugger
     } else {
       // Get value of the box, so we can check if it is valid
@@ -76,7 +76,7 @@ const onClickBox = function (event) {
       // After rendering the turn Call API
       // console.log()
       const boxId = event.target.id
-      console.log('boxId charater of 3 is : ' + boxId.charAt(3))
+      // console.log('boxId charater of 3 is : ' + boxId.charAt(3))
       gEn.updateGameBoardArray(store.currentTurn, boxId.charAt(3))
       // .then(changeTurn())
       changeTurn()
@@ -88,7 +88,7 @@ let a = 1
 
 const toggleSignUpIn = () => {
   if (a % 2 === 1) {
-    console.log('show sign up, hide sign in')
+    // console.log('show sign up, hide sign in')
     $('#formSignUp').show(500)
     $('#formSignIn').hide(500)
     $('#modelTitle').text('Sign Up!')
@@ -103,7 +103,7 @@ const toggleSignUpIn = () => {
 }
 
 const addHandlers = function () {
-  console.log('I am at events.js!, jquery passed me from app js')
+  // console.log('I am at events.js!, jquery passed me from app js')
   $('.box').on('click', onClickBox)
   $('#formSignUp').on('submit', onSignUp)
   $('#formSignIn').on('submit', onSignIn)

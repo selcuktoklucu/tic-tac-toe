@@ -10,7 +10,7 @@ const gamesEvents = require('./games/events.js')
 
 $(() => {
   // your JS code goes here
-  console.log('I am at app.js, Jquery is working!')
+  // console.log('I am at app.js, Jquery is working!')
   userEvents.addHandlers()
   gamesEvents.addHandlers()
   $('#playAgain').hide()

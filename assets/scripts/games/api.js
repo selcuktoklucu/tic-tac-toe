@@ -3,7 +3,7 @@ const config = require('../config')
 const store = require('../store')
 
 const createGame = function (token) {
-  console.log('creating a game on api.js')
+  // console.log('creating a game on api.js')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -16,7 +16,7 @@ const createGame = function (token) {
 }
 
 const updateLoggedInGame = function (arrNumber, value, gameStatus, token) {
-  console.log('I am in games/api.js and updating logged in game. Game id is= ' + store.game.game.id)
+  // console.log('I am in games/api.js and updating logged in game. Game id is= ' + store.game.game.id)
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game.game.id,
     method: 'PATCH',
