@@ -22,10 +22,14 @@ const getGamesSuccess = function (data) {
     )
   })
 }
+const onCreateGameFailure = function () {
+  $('whosTurn').text('Game didnt saved.')
+}
 
 module.exports = {
   onCreateGameSuccess,
-  getGamesSuccess
+  getGamesSuccess,
+  onCreateGameFailure
 }
 // const getBooksSuccess = function (response) {
 //   // console.log(response)

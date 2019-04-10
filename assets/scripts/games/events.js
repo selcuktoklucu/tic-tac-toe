@@ -24,7 +24,7 @@ const createAGameForAUser = function (event) {
   cleanTheBoard()
   $('#playAgain').hide()
   $('.play-message-board').hide()
-  if (store.user.token === '' || store.user.token === undefined) {
+  if (store.user === undefined || store.user === '') {
     // console.log('There is no user Logged In! To Create a game, please sign In!')
   // } else if (store.gBoardArr !== ['', '', '', '', '', '', '', '', '']) {
   //   console.log('You cant save existing game. Finish game and try again.')
@@ -32,7 +32,7 @@ const createAGameForAUser = function (event) {
     // console.log('creating a game, hopefully...')
     api.createGame(store.user.token)
       .then(ui.onCreateGameSuccess)
-      .catch()
+      .catch(ui.onCreateGameFailure)
   }
 }
 
