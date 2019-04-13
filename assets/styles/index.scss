@@ -1,0 +1,71 @@
+@import '~bootstrap/scss/bootstrap';
+
+$alt-color: $cyan;
+$body-bg-color: $gray-500;
+$font-color: $light;
+
+body {
+  background-color: $body-bg-color;
+  // margin-left: 100px;
+  margin: auto;
+  // display: flex;
+  // justify-content: center;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.classTurn {
+  display: flex;
+  justify-content: center;
+  font-size: 32px;
+}
+
+canvas {
+  height: 10%;
+  width: 10%;
+}
+
+.row{
+  margin: auto;
+}
+.btn{
+  margin: auto;
+}
+.box {
+  color: $font-color;
+  background-color: $secondary;
+  align-items: center;
+  display: flex;
+  border: 1px solid $white;
+  font-size: 3em;
+  font-weight: 800;
+  height: 80px;
+  justify-content: center;
+  width: inherit;
+}
+
+.btn-primary {
+  // display: flex
+  // margin 100;
+  max-width: 40vh;
+}
+
+.row {
+  max-width: 300px;
+}
+
+
+.alt-color {
+  background-color: $alt-color;
+}
+
+.play-message-board {
+  display: inline-block;
+}
+
+.make-it-middle {
+  margin: auto;
+}
