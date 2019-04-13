@@ -15,38 +15,40 @@
       <!-- <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
 
     </head>
-    <body>
+    <body class="col-12">
       <h1>Hello Tic Tac Toe!</h1>
-      <p>Who's turn:</p><p id="whosTurn">X</p>
+      <p class="classTurn">Turn: <span id="whosTurn">X</span></p>
       <!--  -->
-      <br>
-      <div class="play-message-board">
+      <!-- <br> -->
+      <div class="btn play-message-board d-flex justify-content-center">
       <p id="onPlayMessage"></p>
+      <br>
+      <br>
       </div>
-      <button type="button" class="btn btn-primary" id="playAgain" data-target="#iAmNotSure">Play Again?</button>
-      <div class="main-board">
+      <button type="button" class="btn-primary justify-content-center" id="playAgain" data-target="#iAmNotSure">Play Again?</button>
+
         <div class="main-child-board">
-          <div class="row row1">
+          <div class="row row1 ">
             <div class="col-4 col-md-4 box alt-color" id="box0"></div>
             <div class="col-4 col-md-4 box alt-color" id="box1"></div>
             <div class="col-4 col-md-4 box alt-color" id="box2"></div>
           </div>
-          <div class="row row2">
+          <div class="row row2 ">
             <div class="col-4 col-md-4 box alt-color" id="box3"></div>
             <div class="col-4 col-md-4 box alt-color" id="box4"></div>
             <div class="col-4 col-md-4 box alt-color" id="box5"></div>
           </div>
-          <div class="row row3">
+          <div class="row row3 ">
             <div class="col-4 col-md-4 box alt-color" id="box6"></div>
             <div class="col-4 col-md-4 box alt-color" id="box7"></div>
             <div class="col-4 col-md-4 box alt-color" id="box8"></div>
           </div>
         </div>
-      </div>
+
       <br>
       <!--  -->
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary col-4" id="myAccount" data-toggle="modal" data-target="#exampleModal">
+      <button type="button" class="btn btn-primary d-flex justify-content-center" id="myAccount" data-toggle="modal" data-target="#exampleModal">
         Sign In Here!
       </button>
 

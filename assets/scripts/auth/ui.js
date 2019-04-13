@@ -2,12 +2,14 @@
 const store = require('../store')
 const gameEvents = require('../games/events.js')
 
+const timingDelay = 1500
+
 const signUpSuccess = function (data) {
   // console.log('signup Success', data)
   $('form').trigger('reset')
   $('#modelTitle').text('Successfuly Sign Up!').css('background-color', 'green').animate({
     opacity: 0.25
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Sign in')
   })
@@ -20,7 +22,7 @@ const signUpFailure = function (data) {
   // console.log('signup Failure', data)
   $('#modelTitle').text('SignUp Failed! Be sure to confirm password').css('background-color', 'red').animate({
     opacity: 0.25
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Sign Up')
   })
@@ -42,7 +44,7 @@ const signInSuccess = function (data) {
   $('#myAccount').text('My Tic-Tac-Toe')
   $('#modelTitle').text('Successfuly Logged In!').css('background-color', 'green').animate({
     opacity: 0.25
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Change Password')
   })
@@ -57,7 +59,7 @@ const signInFailure = function (data) {
   $('form').trigger('reset')
   $('#modelTitle').text(' User or Password is Wrong, Try Again! ').css('background-color', 'red').animate({
     opacity: 0.5
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Sign In')
   })
@@ -68,7 +70,7 @@ const changePwSuccess = function (data) {
   // console.log('Change password success', data)
   $('#modelTitle').text(' Password changed Successfully ').css('background-color', 'green').animate({
     opacity: 0.5
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Change Password')
   })
@@ -79,7 +81,7 @@ const changePwFailure = function (data) {
   // console.log('Change password failed!', data)
   $('#modelTitle').text(' Oppss! Something went wrong! Try again! ').css('background-color', 'red').animate({
     opacity: 0.5
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Change Password')
   })
@@ -91,7 +93,7 @@ const signOutSuccess = function () {
   store.user = null
   $('#modelTitle').text(' User Signed Out Successfully! ').css('background-color', 'green').animate({
     opacity: 0.5
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Sign In')
   })
@@ -110,7 +112,7 @@ const signOutFailure = function () {
   // console.log('signOut Failed!')
   $('#modelTitle').text(' Sign Out Failed! Please Try Again... ').css('background-color', 'red').animate({
     opacity: 0.5
-  }, 700, function () {
+  }, timingDelay, function () {
     // Animation complete.
     $('#modelTitle').animate({opacity: 1}).css('background-color', 'white').text('Change Password')
   })

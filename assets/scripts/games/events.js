@@ -22,8 +22,11 @@ const handleCreateUpdate = function () {
 
 const createAGameForAUser = function (event) {
   cleanTheBoard()
+  $('#playAgain').removeClass('btn d-flex')
   $('#playAgain').hide()
+  $('.play-message-board').removeClass('btn d-flex')
   $('.play-message-board').hide()
+  $('.onPlayMessage').text(' ')
   if (store.user === undefined || store.user === '') {
     // console.log('There is no user Logged In! To Create a game, please sign In!')
   // } else if (store.gBoardArr !== ['', '', '', '', '', '', '', '', '']) {
@@ -50,8 +53,10 @@ const cleanTheBoard = function () {
 // }
 
 const showPlayButton = function () {
-  $('#playAgain').show(1000).on('click', createAGameForAUser)
+  $('#playAgain').addClass('btn d-flex')
+  $('.play-message-board').addClass('btn d-flex')
   $('.play-message-board').show()
+  $('#playAgain').show(1000).on('click', createAGameForAUser)
 }
 
 const updateApiArray = function (arrNumber, value, isGameEnd) {
