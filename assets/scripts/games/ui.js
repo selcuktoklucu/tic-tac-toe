@@ -25,11 +25,20 @@ const getGamesSuccess = function (data) {
 const onCreateGameFailure = function () {
   $('whosTurn').text('Game didnt saved.')
 }
+const updateApiArrayExtensionSuccess = function () {
+  // $('whosTurn').text('Game  saved.')
+}
+
+const updateApiArrayExtensionFailure = function () {
+  $('whosTurn').text('Game didnt saved.')
+}
 
 module.exports = {
   onCreateGameSuccess,
   getGamesSuccess,
-  onCreateGameFailure
+  onCreateGameFailure,
+  updateApiArrayExtensionSuccess,
+  updateApiArrayExtensionFailure
 }
 // const getBooksSuccess = function (response) {
 //   // console.log(response)

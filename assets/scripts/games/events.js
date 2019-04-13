@@ -27,7 +27,7 @@ const createAGameForAUser = function (event) {
   $('.play-message-board').removeClass('btn d-flex')
   $('.play-message-board').hide()
   $('.onPlayMessage').text(' ')
-  if (store.user === undefined || store.user === '') {
+  if (store.user === undefined || store.user === null) {
     // console.log('There is no user Logged In! To Create a game, please sign In!')
   // } else if (store.gBoardArr !== ['', '', '', '', '', '', '', '', '']) {
   //   console.log('You cant save existing game. Finish game and try again.')
@@ -93,7 +93,7 @@ const updateApiArray = function (arrNumber, value, isGameEnd) {
     // ('my stored user token is ' + store.user.token)
     api.createGame(store.user.token)
       .then(ui.onCreateGameSuccess)
-      .catch()
+      .catch(ui.onCreateGameFailure)
   } else {
     updateApiArrayExtension(arrNumber, value, isGameEnd)
     $(document).delay(1000).queue(function () {
@@ -115,16 +115,13 @@ const updateApiArray = function (arrNumber, value, isGameEnd) {
 
 const updateApiArrayExtension = function (arrNumber, value, isGameEnd) {
   //
-  $(() => {
-    // console.log('I am updating the API game' +
-  // 'arrNumber= ' + arrNumber +
-  // 'value= ' + value +
-  // 'gamestatus= ' + isGameEnd +
-  // 'store.user.token= ' + store.user.token)
-    api.updateLoggedInGame(arrNumber, value, isGameEnd, store.user.token)
-      .then()
-      .catch()
-  })
+  if (store.user !== null) {
+    $(() => {
+      api.updateLoggedInGame(arrNumber, value, isGameEnd, store.user.token)
+        .then(ui.updateApiArrayExtensionSuccess)
+        .catch(ui.updateApiArrayExtensionFailure)
+    })
+  }
 }
 
 const endTheGameOnEvents = function () {
