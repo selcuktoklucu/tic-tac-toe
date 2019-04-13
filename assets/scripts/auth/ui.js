@@ -2,7 +2,7 @@
 const store = require('../store')
 const gameEvents = require('../games/events.js')
 
-const timingDelay = 1500
+const timingDelay = 1501
 
 const signUpSuccess = function (data) {
   // console.log('signup Success', data)
